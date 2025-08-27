@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@import '@fontsource-variable/doto';
+
+@layer components{
+    .rad{
+        border-radius: 20px 20px 20px 20px;
+    }
+
+}
+
+
+@theme{
+    --color-main1: #94ADFF;
+    --color-main2: #B9F0FF;
+    --color-eblue: #4671FF;
+    --color-acc: #B194FF;
+    --color-text: #3C3C3C;
+    --color-ehover: #6E90FF;
+    --color-preview: #595959;
+    --color-form: #3E3E3E;
+    --rounded-radius: 20px 20px 20px 20px;
+    --font-doto: 'Doto Variable', sans-serif;
+}
+
+html,body{
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'JetBrains Mono Variable',monospace;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  transition: all 0.3s ease-in-out;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-eblue);
+  transition: all 0.3s ease-in-out;
+}
