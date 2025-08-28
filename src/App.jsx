@@ -9,6 +9,10 @@ import { AnimatePresence } from "motion/react";
 import TopBar from "./components/TopBar.jsx";
 
 
+const savedTheme = localStorage.getItem("theme") || "default";
+document.documentElement.setAttribute("data-theme", savedTheme);
+
+
 function App() {
   const [prewOpen, setPrewOpen] = useState(false);
   const [popOpen, setPopOpen] = useState(false);
@@ -20,12 +24,12 @@ function App() {
   return (
       <>
           <TopBar />
-    <main className="flex w-full h-full bg-white dark:bg-form">
+    <main className="flex w-full h-full bg-background dark:bg-form ">
       <div className="h-screen w-72 bg-gradient-to-b from-main1 to-main2 flex flex-col items-center gap-y-17 2xl:w-102 2xl:gap-y-21 transition-all">
         <div className="w-full flex flex-col items-center gap-y-4 mt-30">
           <div className="flex gap-x-5 w-full justify-center">
             <button
-              className="bg-white border-none rad drop-shadow-xl/25 w-2/5 h-10 text-[15px] text-text hover:bg-acc hover:text-white 2xl:text-[17px] active:translate-y-1 transition-all focus:outline-none cursor-pointer"
+              className="bg-card border-none rad drop-shadow-xl/25 w-2/5 h-10 text-[15px] text-text hover:bg-acc hover:text-white 2xl:text-[17px] active:translate-y-1 transition-all focus:outline-none cursor-pointer"
               onClick={() => {
                   if (tagOpen)
                   {
@@ -37,7 +41,7 @@ function App() {
               Add Script
             </button>
             <button
-              className="bg-white border-none rad drop-shadow-xl/25 w-2/5 h-10 text-[15px] text-text  hover:bg-acc hover:text-white 2xl:text-[17px] active:translate-y-1 transition-all focus:outline-none cursor-pointer"
+              className="bg-card border-none rad drop-shadow-xl/25 w-2/5 h-10 text-[15px] text-text  hover:bg-acc hover:text-white 2xl:text-[17px] active:translate-y-1 transition-all focus:outline-none cursor-pointer"
               onClick={() => {
                   if (popOpen)
                   {
@@ -54,7 +58,7 @@ function App() {
               name="filt"
               id="filt"
               onChange={(evt) => setFilterTag(evt.target.value)}
-              className="text-text  bg-white w-62 h-5 2xl:text-xl 2xl:w-87 2xl:h-7 focus:outline-none text-center drop-shadow-xl/25 rad font-normal"
+              className="text-text  bg-card w-62 h-5 2xl:text-xl 2xl:w-87 2xl:h-7 focus:outline-none text-center drop-shadow-xl/25 rad font-normal"
             >
               <option key={""} value="">
                 No Filter

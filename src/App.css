@@ -3,23 +3,53 @@
 
 @layer components{
     .rad{
-        border-radius: 20px 20px 20px 20px;
+        border-radius: var(--radius);
     }
 
 }
 
 
 @theme{
-    --color-main1: #94ADFF;
-    --color-main2: #B9F0FF;
-    --color-eblue: #4671FF;
-    --color-acc: #B194FF;
-    --color-text: #3C3C3C;
-    --color-ehover: #6E90FF;
-    --color-preview: #595959;
-    --color-form: #3E3E3E;
-    --rounded-radius: 20px 20px 20px 20px;
+    --color-main1: var(--main1);
+    --color-main2: var(--main2);
+    --color-card: var(--card);
+    --color-acc: var(--acc);
+    --color-text: var(--text);
+    --color-toptext: var(--toptext);
+    --color-preview: var(--preview);
+    --color-background: var(--back);
+    --color-form: var(--form);
     --font-doto: 'Doto Variable', sans-serif;
+}
+
+@layer base{
+
+    :root{
+        --main1: #94ADFF;
+        --main2: #B9F0FF;
+        --card: #ffffff;
+        --acc: #B194FF;
+        --text: #3C3C3C;
+        --toptext: #ffffff;
+        --preview: #E2E9FF;
+        --form: #ffffff;
+        --back: #ffffff;
+        --radius: 20px 20px 20px 20px;
+    }
+
+
+    [data-theme="dark"]{
+        --main1: #0029B1;
+        --main2: #0083A7;
+        --card: #454545;
+        --acc: #603AC5;
+        --text: #F9F9F9;
+        --toptext: #ffffff;
+        --preview: #595959;
+        --form: #3E3E3E;
+        --back: #000000;
+        --radius: 20px 20px 20px 20px;
+    }
 }
 
 html,body{
@@ -45,6 +75,6 @@ html,body{
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-eblue);
+  background: var(--acc);
   transition: all 0.3s ease-in-out;
 }

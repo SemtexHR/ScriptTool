@@ -52,7 +52,7 @@ export default function DetailView({ setIsVisible }) {
           <div className="h-1/10 flex items-center justify-between gap-x-17 lg:gap-x-25 xl:gap-x-90 mt-7.5">
             <div className="flex justify-evenly items-center gap-x-10">
               <button
-                className="flex justify-center items-center text-white bg-transparent drop-shadow-xl/25 rounded-sm w-10 h-5 ml-5 lg:text-xl lg:w-10 lg:h-10 hover:bg-acc active:translate-y-1  transition-all focus:outline-none cursor-pointer"
+                className="flex justify-center items-center text-white bg-transparent drop-shadow-xl/25 rad w-10 h-5 ml-5 lg:text-xl lg:w-10 lg:h-10 hover:bg-acc active:translate-y-1  transition-all focus:outline-none cursor-pointer"
                 onClick={() => setIsVisible(false)}
               >
                 <XMarkIcon className="h-5 lg:h-8" />
@@ -63,7 +63,7 @@ export default function DetailView({ setIsVisible }) {
             </div>
             <div className="flex justify-evenly items-center gap-x-3 lg:gap-x-10">
               <button
-                className="flex justify-center items-center text-white bg-transparent drop-shadow-xl/25 rounded-sm  w-10 h-5 lg:text-xl lg:w-10 lg:h-10 hover:bg-acc active:translate-y-1 transition-all focus:outline-none cursor-pointer"
+                className="flex justify-center items-center text-white bg-transparent drop-shadow-xl/25 rad  w-10 h-5 lg:text-xl lg:w-10 lg:h-10 hover:bg-acc active:translate-y-1 transition-all focus:outline-none cursor-pointer"
                 onClick={() => deleteItem()}
               >
                 <TrashIcon className="h-5 lg:h-8 " />
@@ -73,7 +73,7 @@ export default function DetailView({ setIsVisible }) {
                 id="rt"
                 value={runtime}
                 onChange={(evt) => setRuntime(evt.target.value)}
-                className="text-text bg-white w-20 h-5 2xl:text-xl 2xl:w-30 2xl:h-8 focus:outline-none text-center drop-shadow-xl/25 rad"
+                className="text-text bg-card w-20 h-5 2xl:text-xl 2xl:w-30 2xl:h-8 focus:outline-none text-center drop-shadow-xl/25 rad"
               >
                 <option value="3">User</option>
                 <option value="2">Admin</option>
@@ -88,9 +88,9 @@ export default function DetailView({ setIsVisible }) {
             </div>
           </div>
 
-          <div className="bg-blue-100 dark:bg-preview w-full h-9/10 mt-auto overflow-y-auto">
+          <div className="bg-preview w-full h-9/10 mt-auto overflow-y-auto">
             {selectedItem && (
-              <pre className="text-gray-600 dark:text-white p-4 text-[15px] 2xl:text-[20px]">
+              <pre className="text-text p-4 text-[15px] 2xl:text-[20px]">
                 {selectedItem.content}
               </pre>
             )}

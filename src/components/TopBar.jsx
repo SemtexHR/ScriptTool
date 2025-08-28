@@ -1,5 +1,9 @@
 import { getCurrentWindow } from "@tauri-apps/api/window";
 
+function changeTheme(theme) {
+    document.documentElement.setAttribute("data-theme", theme);
+}
+
 export default function TopBar(){
     const win = getCurrentWindow();
 
@@ -15,6 +19,13 @@ export default function TopBar(){
     const handleClose = () => {
         win.close();
     };
+
+    const handleThemeChange = (event) => {
+        changeTheme(event.target.value);
+        localStorage.setItem("theme", event.target.value);
+    }
+
+
 
     return (
         <>
@@ -41,6 +52,11 @@ export default function TopBar(){
                 <div className="absolute left-1/2 -translate-x-1/2  font-JetBrains font-light text-titlecolor tracking-[-0.5px] select-none pointer-events-none text-white">
                     (S)cripty
                 </div>
+
+                <select className="flex ml-auto w-37 h-5 text-white bg-transparent" onChange={handleThemeChange}>
+                    <option value="">(S)cripty Base</option>
+                    <option value="dark">(S)cripty Dark</option>
+                </select>
 
                 <div className="w-16" />
             </div>

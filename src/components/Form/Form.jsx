@@ -71,9 +71,9 @@ export default function Form({ isVisible}) {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 100, opacity: 0 }}
-      className="w-4/20 flex justify-center flex-col items-center gap-y-10  h-screen overflow-y-auto  bg-white dark:bg-form mt-7.5"
+      className="w-4/20 flex justify-center flex-col items-center gap-y-10  h-screen overflow-y-auto  bg-form mt-7.5"
     >
-      <h1 className="block text-black dark:text-white text-3xl font-doto font-bold mt-10">
+      <h1 className="block text-text text-3xl font-doto font-bold mt-10">
         Add Script
       </h1>
       <form
@@ -81,7 +81,7 @@ export default function Form({ isVisible}) {
         className="flex flex-col items-center w-full h-full"
       >
         <div className="flex flex-col items-center w-full space-y-4">
-          <label htmlFor="sp" className="text-black dark:text-white" autoComplete="off">
+          <label htmlFor="sp" className="text-text" autoComplete="off">
             Script Name
           </label>
           <input
@@ -90,11 +90,11 @@ export default function Form({ isVisible}) {
             maxLength={12}
             placeholder="IP Config"
             required
-            className="bg-white text-black outline-none  w-2/3 h-10 rad drop-shadow-xl/25 p-2 "
+            className="bg-card text-text outline-none  w-2/3 h-10 rad drop-shadow-xl/25 p-2 "
           />
         </div>
         <div className="flex flex-col items-center w-full space-y-4 mt-5 rounded-sm drop-shadow-xl/25">
-          <label htmlFor="tags" className=" text-black dark:text-white" autoComplete="off">
+          <label htmlFor="tags" className=" text-text" autoComplete="off">
             Select Tags
           </label>
           <select
@@ -102,7 +102,7 @@ export default function Form({ isVisible}) {
             multiple
             value={selectedTags}
             onChange={handleTagChange}
-            className="bg-white text-black outline-none w-2/3 h-24 rounded-sm drop-shadow-xl/25"
+            className="bg-card text-text outline-none w-2/3 h-24 rounded-sm drop-shadow-xl/25"
           >
             {tags.map((tag) => (
               <option key={tag} value={tag}>

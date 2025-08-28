@@ -30,7 +30,7 @@ fn open_admin_terminal(content: String) {
     Command::new("powershell")
         .args(&[
             "-Command",
-            &format!("Start-Process powershell -ArgumentList '{}'' -Verb runAs", content)
+            &format!("Start-Process powershell -ArgumentList '{}'' -Verb runAs", &content.replace("\"\"",""))
         ])
         .spawn()
         .unwrap();
