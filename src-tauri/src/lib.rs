@@ -30,7 +30,10 @@ fn open_admin_terminal(content: String) {
     Command::new("powershell")
         .args(&[
             "-Command",
-            &format!("Start-Process powershell -ArgumentList '{}'' -Verb runAs", &content.replace("\"\"",""))
+            &format!(
+                "Start-Process powershell -ArgumentList '{}'' -Verb runAs",
+                &content.replace("\"\"", "")
+            ),
         ])
         .spawn()
         .unwrap();
@@ -63,6 +66,8 @@ fn read_ps1(path: String) -> Result<(String, String), String> {
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_process::init())
+        .plugin(tauri_plugin_updater::Builder::new().build())
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
