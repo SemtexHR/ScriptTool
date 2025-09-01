@@ -77,7 +77,7 @@ export default function DetailView({ setIsVisible }) {
               >
                 <option value="3">User</option>
                 <option value="2">Admin</option>
-                <option value="1">System</option>
+                  {/*<option value="1">System</option>*/}
               </select>
               <button
                 className="text-white bg-acc rad w-15 h-7 2xl:text-xl 2xl:w-43 2xl:h-11.25 hover:bg-white hover:text-acc transition-all  active:translate-y-1 focus:outline-none mr-5 drop-shadow-xl/25 cursor-pointer"
