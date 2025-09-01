@@ -7,6 +7,36 @@ import "./App.css";
 import { useListStore } from "./Hooks/useListStore";
 import { AnimatePresence } from "motion/react";
 import TopBar from "./components/TopBar.jsx";
+import {check} from "@tauri-apps/plugin-updater";
+import {relaunch} from "@tauri-apps/plugin-process";
+
+const update = await check();
+if (update) {
+    console.log(
+        `found update ${update.version} from ${update.date} with notes ${update.body}`
+    );
+    let downloaded = 0;
+    let contentLength = 0;
+
+    await update.downloadAndInstall((event) => {
+        switch (event.event) {
+            case 'Started':
+                contentLength = event.data.contentLength;
+                console.log(`started downloading ${event.data.contentLength} bytes`);
+                break;
+            case 'Progress':
+                downloaded += event.data.chunkLength;
+                console.log(`downloaded ${downloaded} from ${contentLength}`);
+                break;
+            case 'Finished':
+                console.log('download finished');
+                break;
+        }
+    });
+
+    console.log('update installed');
+    await relaunch();
+}
 
 
 const savedTheme = localStorage.getItem("theme") || "default";
