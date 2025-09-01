@@ -10,7 +10,7 @@ import TopBar from "./components/TopBar.jsx";
 import {check} from "@tauri-apps/plugin-updater";
 import {relaunch} from "@tauri-apps/plugin-process";
 
-const update = await check();
+/*const update = await check();
 if (update) {
     console.log(
         `found update ${update.version} from ${update.date} with notes ${update.body}`
@@ -36,7 +36,7 @@ if (update) {
 
     console.log('update installed');
     await relaunch();
-}
+}*/
 
 
 const savedTheme = localStorage.getItem("theme") || "default";

@@ -31,7 +31,7 @@ export default function TopBar(){
         <>
 
             <div
-                className=" fixed z-50 w-full h-7.5 px-3 flex items-center justify-between  bg-gradient-to-b from-main2 to-main1  drop-shadow-xl drop-shadow-white/25"
+                className=" fixed z-50 w-full h-7.5 px-3 flex items-center justify-between  bg-gradient-to-b from-main2 to-main1"
                 data-tauri-drag-region
             >
                 <div className="flex mr-[150px] w-[100px] justify-evenly">
