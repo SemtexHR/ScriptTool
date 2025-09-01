@@ -31,12 +31,12 @@ fn open_admin_terminal(content: String) {
         .args(&[
             "-Command",
             &format!(
-                "Start-Process powershell -ArgumentList '{}'' -Verb runAs",
-                &content.replace("\"\"", "")
+                "Start-Process powershell -ArgumentList '-NoExit','-Command','{}' -Verb RunAs",
+                content.replace("'", "''")
             ),
         ])
         .spawn()
-        .unwrap();
+        .expect("Failed to start elevated PowerShell");
 }
 
 #[tauri::command]
